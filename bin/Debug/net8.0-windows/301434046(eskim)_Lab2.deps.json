@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "301434046(eskim)_Lab2/1.0.0": {
+        "runtime": {
+          "301434046(eskim)_Lab2.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "301434046(eskim)_Lab2/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
