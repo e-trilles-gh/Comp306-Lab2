@@ -53,7 +53,7 @@ namespace _301434046_eskim__Lab2.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/301434046(eskim)_Lab2;V1.0.0.0;component/views/ebookreaderview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/301434046(eskim)_Lab2;component/views/ebookreaderview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\EBookReaderView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

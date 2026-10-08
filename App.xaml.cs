@@ -1,4 +1,5 @@
-﻿using _301434046_eskim__Lab2.Stores;
+﻿using _301434046_eskim__Lab2.Services;
+using _301434046_eskim__Lab2.Stores;
 using _301434046_eskim__Lab2.ViewModels;
 using System.Configuration;
 using System.Data;
@@ -15,7 +16,9 @@ namespace _301434046_eskim__Lab2
         {
             NavigationStore navigationStore = new NavigationStore();
 
-            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
+            AuthenticationService authenticationService = new AuthenticationService();
+
+            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore, authenticationService);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainWindowViewModel(navigationStore)

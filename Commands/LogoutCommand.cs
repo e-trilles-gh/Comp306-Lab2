@@ -1,4 +1,5 @@
-﻿using _301434046_eskim__Lab2.Stores;
+﻿using _301434046_eskim__Lab2.Services;
+using _301434046_eskim__Lab2.Stores;
 using _301434046_eskim__Lab2.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -10,16 +11,19 @@ namespace _301434046_eskim__Lab2.Commands
 {
     public class LogoutCommand : CommandBase
     {
-        private readonly NavigationStore _navigationStor;
+        private readonly NavigationStore _navigationStore;
 
-        public LogoutCommand(NavigationStore navigationStor)
+        private readonly AuthenticationService _authenticationService;
+
+        public LogoutCommand(NavigationStore navigationStore, AuthenticationService authenticationService)
         {
-            _navigationStor = navigationStor;
+            _navigationStore = navigationStore;
+            _authenticationService = authenticationService;
         }
 
         public override void Execute(object parameter)
         {
-            _navigationStor.CurrentViewModel = new LoginViewModel(_navigationStor);
+            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore, _authenticationService);
         }
     }
 }
