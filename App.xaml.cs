@@ -15,7 +15,7 @@ namespace _301434046_eskim__Lab2
         {
             NavigationStore navigationStore = new NavigationStore();
 
-            navigationStore.CurrentViewModel = new EBookReaderViewModel(navigationStore);
+            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainWindowViewModel(navigationStore)

@@ -1,9 +1,11 @@
-﻿using _301434046_eskim__Lab2.Stores;
+﻿using _301434046_eskim__Lab2.Commands;
+using _301434046_eskim__Lab2.Stores;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace _301434046_eskim__Lab2.ViewModels
 {
@@ -11,9 +13,12 @@ namespace _301434046_eskim__Lab2.ViewModels
     {
         private NavigationStore _navigationStore;
 
+        public ICommand LogoutUser { get; }
+
         public EBookReaderViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
+            LogoutUser = new LogoutCommand(navigationStore);
         }
     }
 }

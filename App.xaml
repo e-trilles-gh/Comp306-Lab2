@@ -3,6 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:_301434046_eskim__Lab2">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Style TargetType="TextBox">
+                <Setter Property="Width" Value="100" />
+                <Setter Property="Margin" Value="2" />
+            </Style>
+            <Style TargetType="TextBlock">
+                <Setter Property="Margin" Value="0 2" />
+            </Style>
+            <Style TargetType="Button">
+                <Setter Property="Height" Value="30" />
+                <Setter Property="Margin" Value="10" />
+                <Setter Property="Width" Value="75" />
+                <Setter Property="Background" Value="#7173e3" />
+                <Setter Property="Foreground" Value="#ebed7b" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontWeight" Value="Bold" />
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
