@@ -21,10 +21,12 @@
             <StackPanel
                 Grid.Column="1"
                 Orientation="Horizontal">
-                <Button Content="Book List" />
+                <Button
+                    Content="Book List"
+                    Command="{Binding ShowBookListCommand}" />
                 <Button
                     Content="Logout"
-                    Command="{Binding LogoutUser}"/>
+                    Command="{Binding LogoutUser}" />
             </StackPanel>
         </Grid>
         <ContentControl

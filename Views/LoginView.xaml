@@ -46,6 +46,6 @@
             Grid.Row="3"
             Content="Exit"
             Command="{Binding ExitProgram}" />
-        <TextBlock Grid.Row="4" Text="Eskim Trilles" />
+        <TextBlock Grid.Row="4" Text="" />
     </Grid>
 </UserControl>

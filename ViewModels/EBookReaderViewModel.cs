@@ -23,6 +23,9 @@ namespace _301434046_eskim__Lab2.ViewModels
 
         private ViewModelBase _currentContentViewModel;
 
+        private readonly BookService _bookService;
+
+
         public ICommand LogoutUser { get; }
 
         public ICommand ShowBookListCommand { get; }
@@ -45,7 +48,8 @@ namespace _301434046_eskim__Lab2.ViewModels
         public EBookReaderViewModel(
             NavigationStore navigationStore,
             AuthenticationService authenticationService,
-            AmazonS3PdfService amazonPdfService)
+            AmazonS3PdfService amazonPdfService,
+            BookService bookService)
         {
             _navigationStore = navigationStore;
 
@@ -53,9 +57,18 @@ namespace _301434046_eskim__Lab2.ViewModels
 
             _amazonS3PdfService = amazonPdfService;
 
-            LogoutUser = new LogoutCommand(navigationStore, authenticationService);
+            string userId = _authenticationService.CurrentUserId;
 
-            _bookListViewModel = new BookListViewModel(OpenBook);
+            LogoutUser
+                = new LogoutCommand(
+                    navigationStore,
+                    authenticationService,
+                    amazonPdfService,
+                    bookService);
+
+            _bookListViewModel = new BookListViewModel(OpenBook, bookService, userId);
+
+            _ = _bookListViewModel.LoadBooksAsync();
 
             ShowBookListCommand = new ActionCommand(_ => ShowBookList());
 

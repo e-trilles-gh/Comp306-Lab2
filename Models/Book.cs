@@ -8,6 +8,7 @@ namespace _301434046_eskim__Lab2.Models
 {
     public class Book
     {
+        public string UserId { get; set; }
         public string BookId { get; set; }
         public string Title { get; set; }
         public string Author { get; set; }

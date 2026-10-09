@@ -49,9 +49,18 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
-        public LoginViewModel(NavigationStore navigationStore, AuthenticationService authenticationService, AmazonS3PdfService amazonS3PdfService)
+        public LoginViewModel(
+            NavigationStore navigationStore,
+            AuthenticationService authenticationService,
+            AmazonS3PdfService amazonS3PdfService,
+            BookService bookService)
         {
-            LoginUser = new LoginCommand(this, navigationStore, authenticationService, amazonS3PdfService);
+            LoginUser = new LoginCommand(
+                this,
+                navigationStore,
+                authenticationService,
+                amazonS3PdfService,
+                bookService);
             ExitProgram = new ExitCommand();
         }
     }

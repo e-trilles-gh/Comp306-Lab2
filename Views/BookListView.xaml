@@ -35,7 +35,7 @@
 
                         <TextBlock>
                             <Run Text="Last read: Page " />
-                            <Run Text="{Binding LastRedPage}" />
+                            <Run Text="{Binding LastReadPage}" />
                         </TextBlock>
                     </StackPanel>
                 </DataTemplate>

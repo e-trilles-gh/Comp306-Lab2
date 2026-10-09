@@ -18,6 +18,7 @@ C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\30143
 C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\301434046(eskim)_Lab2\301434046(eskim)_Lab2\bin\Debug\net8.0-windows\301434046(eskim)_Lab2.dll
 C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\301434046(eskim)_Lab2\301434046(eskim)_Lab2\bin\Debug\net8.0-windows\301434046(eskim)_Lab2.pdb
 C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\301434046(eskim)_Lab2\301434046(eskim)_Lab2\bin\Debug\net8.0-windows\AWSSDK.Core.dll
+C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\301434046(eskim)_Lab2\301434046(eskim)_Lab2\bin\Debug\net8.0-windows\AWSSDK.DynamoDBv2.dll
 C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\301434046(eskim)_Lab2\301434046(eskim)_Lab2\bin\Debug\net8.0-windows\AWSSDK.S3.dll
 C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\301434046(eskim)_Lab2\301434046(eskim)_Lab2\bin\Debug\net8.0-windows\Microsoft.Bcl.Cryptography.dll
 C:\Users\EsKim\Documents\Practice\Comp306_Software_Security\LabAssignment2\301434046(eskim)_Lab2\301434046(eskim)_Lab2\bin\Debug\net8.0-windows\Syncfusion.Compression.Base.dll

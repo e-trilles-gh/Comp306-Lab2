@@ -18,5 +18,6 @@
     <PkgSyncfusion_PdfViewer_WPF Condition=" '$(PkgSyncfusion_PdfViewer_WPF)' == '' ">C:\Users\EsKim\.nuget\packages\syncfusion.pdfviewer.wpf\35.1.39</PkgSyncfusion_PdfViewer_WPF>
     <PkgAWSSDK_Core Condition=" '$(PkgAWSSDK_Core)' == '' ">C:\Users\EsKim\.nuget\packages\awssdk.core\4.0.102.9</PkgAWSSDK_Core>
     <PkgAWSSDK_S3 Condition=" '$(PkgAWSSDK_S3)' == '' ">C:\Users\EsKim\.nuget\packages\awssdk.s3\4.0.104.2</PkgAWSSDK_S3>
+    <PkgAWSSDK_DynamoDBv2 Condition=" '$(PkgAWSSDK_DynamoDBv2)' == '' ">C:\Users\EsKim\.nuget\packages\awssdk.dynamodbv2\4.0.107.1</PkgAWSSDK_DynamoDBv2>
   </PropertyGroup>
 </Project>

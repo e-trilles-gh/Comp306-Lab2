@@ -1,6 +1,8 @@
 ﻿using _301434046_eskim__Lab2.Services;
 using _301434046_eskim__Lab2.Stores;
 using _301434046_eskim__Lab2.ViewModels;
+using Amazon;
+using Amazon.DynamoDBv2;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -20,7 +22,16 @@ namespace _301434046_eskim__Lab2
 
             AmazonS3PdfService amazonS3PdfService = new AmazonS3PdfService();
 
-            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore, authenticationService, amazonS3PdfService);
+            IAmazonDynamoDB dynamoDBClient = new AmazonDynamoDBClient(RegionEndpoint.USEast1);
+
+            BookService bookService = new BookService(dynamoDBClient);
+
+            navigationStore.CurrentViewModel
+                = new LoginViewModel(
+                    navigationStore,
+                    authenticationService,
+                    amazonS3PdfService,
+                    bookService);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainWindowViewModel(navigationStore)

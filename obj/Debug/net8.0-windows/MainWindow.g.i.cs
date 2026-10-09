@@ -55,7 +55,7 @@ namespace _301434046_eskim__Lab2 {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/301434046(eskim)_Lab2;V1.0.0.0;component/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/301434046(eskim)_Lab2;component/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

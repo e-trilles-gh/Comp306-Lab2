@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("301434046(eskim)_Lab2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e919222e4ec6a4e161e84f568cb61acf4bb1b72c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa87d06075bec9186e988b4ae304f5b14648e455")]
 [assembly: System.Reflection.AssemblyProductAttribute("301434046(eskim)_Lab2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("301434046(eskim)_Lab2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
