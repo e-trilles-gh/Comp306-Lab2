@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:_301434046_eskim__Lab2.Views"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Windows.PdfViewer;assembly=Syncfusion.PdfViewer.WPF"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
@@ -17,10 +18,17 @@
                 <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Column="0" Text="Hello" />
-            <Button
+            <StackPanel
                 Grid.Column="1"
-                Content="Logout"
-                Command="{Binding LogoutUser}"/>
+                Orientation="Horizontal">
+                <Button Content="Book List" />
+                <Button
+                    Content="Logout"
+                    Command="{Binding LogoutUser}"/>
+            </StackPanel>
         </Grid>
+        <ContentControl
+            Grid.Row="1"
+            Content="{Binding CurrentContentViewModel}" />
     </Grid>
 </UserControl>

@@ -16,6 +16,12 @@
             <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}" >
                 <views:LoginView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PdfReaderViewModel}" >
+                <views:PdfReaderView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:BookListViewModel}" >
+                <views:BookListView />
+            </DataTemplate>
         </Grid.Resources>
 
         <ContentControl Content="{Binding CurrentViewModel}" />

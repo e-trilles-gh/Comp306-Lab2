@@ -18,7 +18,9 @@ namespace _301434046_eskim__Lab2
 
             AuthenticationService authenticationService = new AuthenticationService();
 
-            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore, authenticationService);
+            AmazonS3PdfService amazonS3PdfService = new AmazonS3PdfService();
+
+            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore, authenticationService, amazonS3PdfService);
             MainWindow = new MainWindow()
             {
                 DataContext = new MainWindowViewModel(navigationStore)

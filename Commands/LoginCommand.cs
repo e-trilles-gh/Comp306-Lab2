@@ -15,11 +15,17 @@ namespace _301434046_eskim__Lab2.Commands
         private readonly NavigationStore _navigationStore;
         private readonly LoginViewModel _loginViewModel;
 
-        public LoginCommand(LoginViewModel loginViewModel, NavigationStore navigationStore, AuthenticationService authenticationService)
+        private readonly AmazonS3PdfService _amazonS3PdfService;
+
+        public LoginCommand(LoginViewModel loginViewModel,
+            NavigationStore navigationStore,
+            AuthenticationService authenticationService,
+            AmazonS3PdfService amazonS3PdfService)
         {
             _authenticationService = authenticationService;
             _loginViewModel = loginViewModel;
             _navigationStore = navigationStore;
+            _amazonS3PdfService = amazonS3PdfService;
         }
 
         public override void Execute(object parameter)
@@ -30,7 +36,7 @@ namespace _301434046_eskim__Lab2.Commands
 
             if (authenticated)
             {
-                _navigationStore.CurrentViewModel = new EBookReaderViewModel(_navigationStore, _authenticationService);
+                _navigationStore.CurrentViewModel = new EBookReaderViewModel(_navigationStore, _authenticationService, _amazonS3PdfService);
             }
             else
             {

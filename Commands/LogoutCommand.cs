@@ -15,6 +15,8 @@ namespace _301434046_eskim__Lab2.Commands
 
         private readonly AuthenticationService _authenticationService;
 
+        private readonly AmazonS3PdfService _amazonS3PdfService;
+
         public LogoutCommand(NavigationStore navigationStore, AuthenticationService authenticationService)
         {
             _navigationStore = navigationStore;
@@ -23,7 +25,8 @@ namespace _301434046_eskim__Lab2.Commands
 
         public override void Execute(object parameter)
         {
-            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore, _authenticationService);
+            _navigationStore.CurrentViewModel.Dispose();
+            _navigationStore.CurrentViewModel = new LoginViewModel(_navigationStore, _authenticationService, _amazonS3PdfService);
         }
     }
 }

@@ -1,8 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "4n1WnbCeFgY=",
+  "dgSpecHash": "/XN5YoJHVAM=",
   "success": true,
   "projectFilePath": "C:\\Users\\EsKim\\Documents\\Practice\\Comp306_Software_Security\\LabAssignment2\\301434046(eskim)_Lab2\\301434046(eskim)_Lab2\\301434046(eskim)_Lab2.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\EsKim\\.nuget\\packages\\awssdk.core\\4.0.102.9\\awssdk.core.4.0.102.9.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\awssdk.s3\\4.0.104.2\\awssdk.s3.4.0.104.2.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\microsoft.bcl.cryptography\\10.0.11\\microsoft.bcl.cryptography.10.0.11.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\syncfusion.compression.base\\35.1.39\\syncfusion.compression.base.35.1.39.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\syncfusion.licensing\\35.1.39\\syncfusion.licensing.35.1.39.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\syncfusion.pdf.wpf\\35.1.39\\syncfusion.pdf.wpf.35.1.39.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\syncfusion.pdftoimageconverter.wpf\\35.1.39\\syncfusion.pdftoimageconverter.wpf.35.1.39.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\syncfusion.pdfviewer.wpf\\35.1.39\\syncfusion.pdfviewer.wpf.35.1.39.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\syncfusion.shared.wpf\\35.1.39\\syncfusion.shared.wpf.35.1.39.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\syncfusion.telemetry\\35.1.39\\syncfusion.telemetry.35.1.39.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\system.formats.asn1\\10.0.11\\system.formats.asn1.10.0.11.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\system.security.cryptography.pkcs\\10.0.11\\system.security.cryptography.pkcs.10.0.11.nupkg.sha512",
+    "C:\\Users\\EsKim\\.nuget\\packages\\system.security.cryptography.xml\\10.0.11\\system.security.cryptography.xml.10.0.11.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -10,7 +10,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <PackageReference Include="AWSSDK.Core" Version="4.0.102.9" />
+    <PackageReference Include="AWSSDK.S3" Version="4.0.104.2" />
+    <PackageReference Include="Syncfusion.PdfViewer.WPF" Version="35.1.39" />
   </ItemGroup>
 
 </Project>

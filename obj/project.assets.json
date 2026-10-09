@@ -1,11 +1,615 @@
 {
   "version": 4,
   "targets": {
-    "net8.0-windows": {}
+    "net8.0-windows": {
+      "AWSSDK.Core/4.0.102.9": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "AWSSDK.S3/4.0.104.2": {
+        "type": "package",
+        "dependencies": {
+          "AWSSDK.Core": "[4.0.102.9, 5.0.0)"
+        },
+        "compile": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/AWSSDK.S3.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Bcl.Cryptography/10.0.11": {
+        "type": "package",
+        "dependencies": {
+          "System.Formats.Asn1": "10.0.11"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Bcl.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Bcl.Cryptography.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "Syncfusion.Compression.Base/35.1.39": {
+        "type": "package",
+        "dependencies": {
+          "System.Security.Cryptography.Xml": "10.0.11"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Compression.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Compression.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Licensing/35.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Wpf/35.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "35.1.39",
+          "Syncfusion.Licensing": "35.1.39",
+          "Syncfusion.Telemetry": "35.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Pdf.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Pdf.Base.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.PdfToImageConverter.WPF/35.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "35.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.PdfToImageConverter.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.PdfToImageConverter.Base.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/net8.0-windows7.0/Syncfusion.PdfToImageConverter.WPF.targets": {}
+        }
+      },
+      "Syncfusion.PdfViewer.WPF/35.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "35.1.39",
+          "Syncfusion.Licensing": "35.1.39",
+          "Syncfusion.Pdf.Wpf": "35.1.39",
+          "Syncfusion.PdfToImageConverter.WPF": "35.1.39",
+          "Syncfusion.Shared.WPF": "35.1.39",
+          "Syncfusion.Telemetry": "35.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.PdfViewer.WPF.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.PdfViewer.WPF.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Shared.WPF/35.1.39": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "35.1.39",
+          "Syncfusion.Telemetry": "35.1.39"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.WPF.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Shared.WPF.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Syncfusion.Telemetry/35.1.39": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/Syncfusion.Telemetry.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/Syncfusion.Telemetry.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Formats.Asn1/10.0.11": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      },
+      "System.Security.Cryptography.Pkcs/10.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.Cryptography": "10.0.11",
+          "System.Formats.Asn1": "10.0.11"
+        },
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      },
+      "System.Security.Cryptography.Xml/10.0.11": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.Cryptography": "10.0.11",
+          "System.Security.Cryptography.Pkcs": "10.0.11"
+        },
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Xml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Xml.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net8.0/_._": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "AWSSDK.Core/4.0.102.9": {
+      "sha512": "VWGkR0QXDTmThusATC6I9IX06YtYeQNF+1/v6vBbfzIC+MaAuNjYn0aSTIyX+abciZvFhuSSi0d6/pC93wROCw==",
+      "type": "package",
+      "path": "awssdk.core/4.0.102.9",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "awssdk.core.4.0.102.9.nupkg.sha512",
+        "awssdk.core.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.Core.dll",
+        "lib/net472/AWSSDK.Core.xml",
+        "lib/net8.0/AWSSDK.Core.dll",
+        "lib/net8.0/AWSSDK.Core.xml",
+        "lib/netcoreapp3.1/AWSSDK.Core.dll",
+        "lib/netcoreapp3.1/AWSSDK.Core.xml",
+        "lib/netstandard2.0/AWSSDK.Core.dll",
+        "lib/netstandard2.0/AWSSDK.Core.xml",
+        "tools/account-management.ps1"
+      ]
+    },
+    "AWSSDK.S3/4.0.104.2": {
+      "sha512": "ImZ1pO9SWh+RAN8hmN5OnonyTvq+/q4dXLxTxjtsZ60c06dnCCy+MX3sc4F3Q8c9J1bg8WoU+VkrrVIpXLviww==",
+      "type": "package",
+      "path": "awssdk.s3/4.0.104.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/AWSSDK.S3.CodeAnalysis.dll",
+        "analyzers/dotnet/cs/SharedAnalysisCode.dll",
+        "awssdk.s3.4.0.104.2.nupkg.sha512",
+        "awssdk.s3.nuspec",
+        "images/AWSLogo.png",
+        "lib/net472/AWSSDK.S3.dll",
+        "lib/net472/AWSSDK.S3.xml",
+        "lib/net8.0/AWSSDK.S3.dll",
+        "lib/net8.0/AWSSDK.S3.xml",
+        "lib/netcoreapp3.1/AWSSDK.S3.dll",
+        "lib/netcoreapp3.1/AWSSDK.S3.xml",
+        "lib/netstandard2.0/AWSSDK.S3.dll",
+        "lib/netstandard2.0/AWSSDK.S3.xml",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.Bcl.Cryptography/10.0.11": {
+      "sha512": "7foJyHT7LbitR/l0BGJ2T86U6cULoc0P6mc+/Ih1Hj1nPOL8Wh2qc1DF4rn2sUzlcJH4tZ8M2A75/Xqrce2QGg==",
+      "type": "package",
+      "path": "microsoft.bcl.cryptography/10.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Bcl.Cryptography.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Bcl.Cryptography.targets",
+        "lib/net10.0/Microsoft.Bcl.Cryptography.dll",
+        "lib/net10.0/Microsoft.Bcl.Cryptography.xml",
+        "lib/net462/Microsoft.Bcl.Cryptography.dll",
+        "lib/net462/Microsoft.Bcl.Cryptography.xml",
+        "lib/net8.0/Microsoft.Bcl.Cryptography.dll",
+        "lib/net8.0/Microsoft.Bcl.Cryptography.xml",
+        "lib/net9.0/Microsoft.Bcl.Cryptography.dll",
+        "lib/net9.0/Microsoft.Bcl.Cryptography.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.Cryptography.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.Cryptography.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.Cryptography.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.Cryptography.xml",
+        "microsoft.bcl.cryptography.10.0.11.nupkg.sha512",
+        "microsoft.bcl.cryptography.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Syncfusion.Compression.Base/35.1.39": {
+      "sha512": "5341yBUfA28kAe0hdgXQr+1ZGN5RMt8bb4pfnqf1iEH1l/mkShsFZ8C/IiNfBscXUblIf1YyMPdnYLoiGRV8sw==",
+      "type": "package",
+      "path": "syncfusion.compression.base/35.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "lib/net10.0-windows7.0/Syncfusion.Compression.Base.dll",
+        "lib/net10.0-windows7.0/Syncfusion.Compression.Base.xml",
+        "lib/net462/Syncfusion.Compression.Base.dll",
+        "lib/net462/Syncfusion.Compression.Base.xml",
+        "lib/net8.0-windows7.0/Syncfusion.Compression.Base.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Compression.Base.xml",
+        "lib/net9.0-windows7.0/Syncfusion.Compression.Base.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Compression.Base.xml",
+        "syncfusion.compression.base.35.1.39.nupkg.sha512",
+        "syncfusion.compression.base.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Licensing/35.1.39": {
+      "sha512": "2rBTSvQW+Jgxrz+mqctSvASe3RwnKjw0zXdPYVv0QI0aXIGyjTMvKYDoIvLt5hsvw4ho3MjTylFMGtPwi04Wtg==",
+      "type": "package",
+      "path": "syncfusion.licensing/35.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net10.0/Syncfusion.Licensing.dll",
+        "lib/net462/Syncfusion.Licensing.dll",
+        "lib/net8.0/Syncfusion.Licensing.dll",
+        "lib/net9.0/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.35.1.39.nupkg.sha512",
+        "syncfusion.licensing.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.Pdf.Wpf/35.1.39": {
+      "sha512": "VLrEVnKbZOuN8hWobxwLJ+65OaaD6fHfkiM4m0H5yY8hwXimnC8WyoLjAWYvKe3/sVE5iJlqeoR4tHMLRDdobQ==",
+      "type": "package",
+      "path": "syncfusion.pdf.wpf/35.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net10.0-windows7.0/Syncfusion.Pdf.Base.dll",
+        "lib/net10.0-windows7.0/Syncfusion.Pdf.Base.xml",
+        "lib/net462/Syncfusion.Pdf.Base.dll",
+        "lib/net462/Syncfusion.Pdf.Base.xml",
+        "lib/net8.0-windows7.0/Syncfusion.Pdf.Base.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Pdf.Base.xml",
+        "lib/net9.0-windows7.0/Syncfusion.Pdf.Base.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Pdf.Base.xml",
+        "syncfusion.pdf.wpf.35.1.39.nupkg.sha512",
+        "syncfusion.pdf.wpf.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.PdfToImageConverter.WPF/35.1.39": {
+      "sha512": "mi/lzBlMbImvDS04VcDa+CfV3sW12OEwiBoaBKKLhcfUkVME/v/d8qoSC0cxYpjkSWPeDnclE1hcQoeKEKZCeQ==",
+      "type": "package",
+      "path": "syncfusion.pdftoimageconverter.wpf/35.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "Pdfium/win-arm64/native/pdfium.dll",
+        "Pdfium/win-x64/native/pdfium.dll",
+        "Pdfium/win-x86/native/pdfium.dll",
+        "README.md",
+        "build/net10.0-windows7.0/Syncfusion.PdfToImageConverter.WPF.targets",
+        "build/net462/Syncfusion.PdfToImageConverter.WPF.targets",
+        "build/net8.0-windows7.0/Syncfusion.PdfToImageConverter.WPF.targets",
+        "build/net9.0-windows7.0/Syncfusion.PdfToImageConverter.WPF.targets",
+        "lib/net10.0-windows7.0/Syncfusion.PdfToImageConverter.Base.dll",
+        "lib/net10.0-windows7.0/Syncfusion.PdfToImageConverter.Base.xml",
+        "lib/net462/Syncfusion.PdfToImageConverter.Base.dll",
+        "lib/net462/Syncfusion.PdfToImageConverter.Base.xml",
+        "lib/net8.0-windows7.0/Syncfusion.PdfToImageConverter.Base.dll",
+        "lib/net8.0-windows7.0/Syncfusion.PdfToImageConverter.Base.xml",
+        "lib/net9.0-windows7.0/Syncfusion.PdfToImageConverter.Base.dll",
+        "lib/net9.0-windows7.0/Syncfusion.PdfToImageConverter.Base.xml",
+        "syncfusion.pdftoimageconverter.wpf.35.1.39.nupkg.sha512",
+        "syncfusion.pdftoimageconverter.wpf.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "Syncfusion.PdfViewer.WPF/35.1.39": {
+      "sha512": "POJplCjRNaXP07XX4vXOCZSe9sOe/Vqc2V+Xi5lMDEB1myFwVi8+M2lfTHiFlxQ0dpOTUyeaXQ7kLLJHZ/40nw==",
+      "type": "package",
+      "path": "syncfusion.pdfviewer.wpf/35.1.39",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net10.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net10.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.VisualStudio.Design.dll",
+        "lib/net10.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.dll.Design.dll",
+        "lib/net10.0-windows7.0/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net10.0-windows7.0/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net462/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net462/Design/Syncfusion.PdfViewer.WPF.VisualStudio.Design.dll",
+        "lib/net462/Design/Syncfusion.PdfViewer.WPF.dll.Design.dll",
+        "lib/net462/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net462/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net8.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net8.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.VisualStudio.Design.dll",
+        "lib/net8.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.dll.Design.dll",
+        "lib/net8.0-windows7.0/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net8.0-windows7.0/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net9.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net9.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.VisualStudio.Design.dll",
+        "lib/net9.0-windows7.0/Design/Syncfusion.PdfViewer.WPF.dll.Design.dll",
+        "lib/net9.0-windows7.0/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net9.0-windows7.0/Syncfusion.PdfViewer.WPF.xml",
+        "syncfusion.pdfviewer.wpf.35.1.39.nupkg.sha512",
+        "syncfusion.pdfviewer.wpf.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.WPF/35.1.39": {
+      "sha512": "PrsV5SctBO2mtpxgi0lVeBDUuhkvK6KhCroYsJgZokUITD/fj/dF4Z7bf/tpApf8z54BINcle/WY1+edd++Xcw==",
+      "type": "package",
+      "path": "syncfusion.shared.wpf/35.1.39",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net10.0-windows7.0/Design/Syncfusion.Design.WPF.dll",
+        "lib/net10.0-windows7.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net10.0-windows7.0/Design/Syncfusion.Shared.WPF.Expression.Design.dll",
+        "lib/net10.0-windows7.0/Design/Syncfusion.Shared.WPF.VisualStudio.Design.dll",
+        "lib/net10.0-windows7.0/Design/Syncfusion.Shared.WPF.dll.Design.dll",
+        "lib/net10.0-windows7.0/Syncfusion.Shared.WPF.dll",
+        "lib/net10.0-windows7.0/Syncfusion.Shared.WPF.xml",
+        "lib/net462/Design/Syncfusion.Design.WPF.dll",
+        "lib/net462/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net462/Design/Syncfusion.Shared.WPF.Expression.Design.dll",
+        "lib/net462/Design/Syncfusion.Shared.WPF.VisualStudio.Design.dll",
+        "lib/net462/Design/Syncfusion.Shared.WPF.dll.Design.dll",
+        "lib/net462/Syncfusion.Shared.WPF.dll",
+        "lib/net462/Syncfusion.Shared.WPF.xml",
+        "lib/net8.0-windows7.0/Design/Syncfusion.Design.WPF.dll",
+        "lib/net8.0-windows7.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net8.0-windows7.0/Design/Syncfusion.Shared.WPF.Expression.Design.dll",
+        "lib/net8.0-windows7.0/Design/Syncfusion.Shared.WPF.VisualStudio.Design.dll",
+        "lib/net8.0-windows7.0/Design/Syncfusion.Shared.WPF.dll.Design.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Shared.WPF.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Shared.WPF.xml",
+        "lib/net9.0-windows7.0/Design/Syncfusion.Design.WPF.dll",
+        "lib/net9.0-windows7.0/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net9.0-windows7.0/Design/Syncfusion.Shared.WPF.Expression.Design.dll",
+        "lib/net9.0-windows7.0/Design/Syncfusion.Shared.WPF.VisualStudio.Design.dll",
+        "lib/net9.0-windows7.0/Design/Syncfusion.Shared.WPF.dll.Design.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Shared.WPF.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Shared.WPF.xml",
+        "syncfusion.shared.wpf.35.1.39.nupkg.sha512",
+        "syncfusion.shared.wpf.nuspec",
+        "syncfusion_logo.png",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Telemetry/35.1.39": {
+      "sha512": "8pVivQbkFxzBVnuR+SubpjhtGBRtEx6mxEePDztn7wFiBftqu8OC1NUr5tsM+T1h/0COoiimm8q2eyyz0zSs2A==",
+      "type": "package",
+      "path": "syncfusion.telemetry/35.1.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.md",
+        "lib/net10.0-windows7.0/Syncfusion.Telemetry.dll",
+        "lib/net10.0-windows7.0/Syncfusion.Telemetry.xml",
+        "lib/net10.0/Syncfusion.Telemetry.dll",
+        "lib/net10.0/Syncfusion.Telemetry.xml",
+        "lib/net462/Syncfusion.Telemetry.dll",
+        "lib/net462/Syncfusion.Telemetry.xml",
+        "lib/net8.0-windows7.0/Syncfusion.Telemetry.dll",
+        "lib/net8.0-windows7.0/Syncfusion.Telemetry.xml",
+        "lib/net8.0/Syncfusion.Telemetry.dll",
+        "lib/net8.0/Syncfusion.Telemetry.xml",
+        "lib/net9.0-windows7.0/Syncfusion.Telemetry.dll",
+        "lib/net9.0-windows7.0/Syncfusion.Telemetry.xml",
+        "lib/net9.0/Syncfusion.Telemetry.dll",
+        "lib/net9.0/Syncfusion.Telemetry.xml",
+        "lib/netstandard2.0/Syncfusion.Telemetry.dll",
+        "lib/netstandard2.0/Syncfusion.Telemetry.xml",
+        "lib/uap10.0/Syncfusion.Telemetry.dll",
+        "lib/uap10.0/Syncfusion.Telemetry.xml",
+        "syncfusion.telemetry.35.1.39.nupkg.sha512",
+        "syncfusion.telemetry.nuspec",
+        "syncfusion_logo.png"
+      ]
+    },
+    "System.Formats.Asn1/10.0.11": {
+      "sha512": "OxAZMMykBaKsD+r2jXujE0f/ldcRfwsfLDXOZRI7iOAPNwfwIwwnj8HCR0NdEP7oxH8PKQs/pqseNcRwFx3BVQ==",
+      "type": "package",
+      "path": "system.formats.asn1/10.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Formats.Asn1.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Formats.Asn1.targets",
+        "lib/net10.0/System.Formats.Asn1.dll",
+        "lib/net10.0/System.Formats.Asn1.xml",
+        "lib/net462/System.Formats.Asn1.dll",
+        "lib/net462/System.Formats.Asn1.xml",
+        "lib/net8.0/System.Formats.Asn1.dll",
+        "lib/net8.0/System.Formats.Asn1.xml",
+        "lib/net9.0/System.Formats.Asn1.dll",
+        "lib/net9.0/System.Formats.Asn1.xml",
+        "lib/netstandard2.0/System.Formats.Asn1.dll",
+        "lib/netstandard2.0/System.Formats.Asn1.xml",
+        "system.formats.asn1.10.0.11.nupkg.sha512",
+        "system.formats.asn1.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Cryptography.Pkcs/10.0.11": {
+      "sha512": "8IV+rI3xN/Mkq9MsSX7VZTv9T9Wt+tyhHLwBX9VNZBk8m8kknEs1JeTSjI2x9M2L/fSja+c2WSE5n5Yy0GXdoQ==",
+      "type": "package",
+      "path": "system.security.cryptography.pkcs/10.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net10.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net10.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net462/System.Security.Cryptography.Pkcs.dll",
+        "lib/net462/System.Security.Cryptography.Pkcs.xml",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net9.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net9.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net10.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net9.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.10.0.11.nupkg.sha512",
+        "system.security.cryptography.pkcs.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Cryptography.Xml/10.0.11": {
+      "sha512": "TokfVsaU2fmcwvsU6ihLCkseVfwhLX6Tmbl3qh3nOBIqHSX4yqFllpslA+PuHERH/ENu3kwqo4deZiyT0Wvh3Q==",
+      "type": "package",
+      "path": "system.security.cryptography.xml/10.0.11",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Xml.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Xml.targets",
+        "lib/net10.0/System.Security.Cryptography.Xml.dll",
+        "lib/net10.0/System.Security.Cryptography.Xml.xml",
+        "lib/net462/System.Security.Cryptography.Xml.dll",
+        "lib/net462/System.Security.Cryptography.Xml.xml",
+        "lib/net8.0/System.Security.Cryptography.Xml.dll",
+        "lib/net8.0/System.Security.Cryptography.Xml.xml",
+        "lib/net9.0/System.Security.Cryptography.Xml.dll",
+        "lib/net9.0/System.Security.Cryptography.Xml.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Xml.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Xml.xml",
+        "system.security.cryptography.xml.10.0.11.nupkg.sha512",
+        "system.security.cryptography.xml.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0-windows": []
+    "net8.0-windows": [
+      "AWSSDK.Core >= 4.0.102.9",
+      "AWSSDK.S3 >= 4.0.104.2",
+      "Syncfusion.PdfViewer.WPF >= 35.1.39"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\EsKim\\.nuget\\packages\\": {},
@@ -59,6 +663,20 @@
       "net8.0-windows": {
         "framework": "net8.0-windows7.0",
         "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "AWSSDK.Core": {
+            "target": "Package",
+            "version": "[4.0.102.9, )"
+          },
+          "AWSSDK.S3": {
+            "target": "Package",
+            "version": "[4.0.104.2, )"
+          },
+          "Syncfusion.PdfViewer.WPF": {
+            "target": "Package",
+            "version": "[35.1.39, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
