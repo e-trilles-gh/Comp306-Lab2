@@ -110,5 +110,10 @@ namespace _301434046_eskim__Lab2.ViewModels
 
             LoadBooks(sampleBooks);
         }
+
+        public void ClearSelectedBook()
+        {
+            SelectedBook = null;
+        }
     }
 }

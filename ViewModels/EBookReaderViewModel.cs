@@ -79,6 +79,7 @@ namespace _301434046_eskim__Lab2.ViewModels
 
         private void ShowBookList()
         {
+            _bookListViewModel.ClearSelectedBook();
             CurrentContentViewModel = _bookListViewModel;
         }
 
