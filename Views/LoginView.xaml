@@ -48,4 +48,5 @@
             Command="{Binding ExitProgram}" />
         <TextBlock Grid.Row="4" Text="" />
     </Grid>
+
 </UserControl>

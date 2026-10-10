@@ -1,4 +1,5 @@
-﻿using System;
+﻿using _301434046_eskim__Lab2.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +25,25 @@ namespace _301434046_eskim__Lab2.Views
         {
             InitializeComponent();
         }
+
+        private void pdfViewer_CurrentPageChanged(object sender, EventArgs args)
+        {
+            if (DataContext is PdfReaderViewModel viewModel)
+            {
+                viewModel.UpdateLastReadPage(pdfViewer.CurrentPage);
+            }
+        }
+
+        private void pdfViewer_DocumentLoaded(object sender, EventArgs args)
+        {
+            if (DataContext is PdfReaderViewModel viewModel)
+            {
+                if (viewModel.PageToRestore > 1)
+                {
+                    pdfViewer.GotoPage(viewModel.PageToRestore);
+                }
+            }
+        }
+
     }
 }

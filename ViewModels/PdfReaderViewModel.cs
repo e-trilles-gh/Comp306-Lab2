@@ -21,6 +21,8 @@ namespace _301434046_eskim__Lab2.ViewModels
 
         public Book SelectedBook { get; }
 
+        public int PageToRestore { get; }
+
         public int LastReadPage
         {
             get { return SelectedBook.LastReadPage; }
@@ -61,6 +63,8 @@ namespace _301434046_eskim__Lab2.ViewModels
             SelectedBook = selectedBook ?? throw new ArgumentNullException(nameof(selectedBook));
 
             _pdfService = pdfService ?? throw new ArgumentNullException(nameof(pdfService));
+
+            PageToRestore = SelectedBook.LastReadPage;
         }
 
         public async Task LoadAsync()
@@ -79,6 +83,15 @@ namespace _301434046_eskim__Lab2.ViewModels
             finally
             {
                 IsLoading = false;
+            }
+        }
+
+        public void UpdateLastReadPage(int page)
+        {
+            if (page > 0)
+            {
+                SelectedBook.LastReadPage = page;
+                OnPropertyChanged(nameof(LastReadPage));
             }
         }
     }

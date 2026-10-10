@@ -44,21 +44,44 @@ namespace _301434046_eskim__Lab2.Services
                 var book = new Book
                 {
                     UserId = item["UserId"].S,
-                    BookId = item["UserId"].S,
+                    BookId = item["BookId"].S,
                     Title = item["Title"].S,
                     Author = item["Author"].S,
                     BucketName = item["BucketName"].S,
-                    KeyName = item["Key"].S,
+                    KeyName = item["KeyName"].S,
                     LastReadPage = int.Parse(item["LastReadPage"].N)
                 };
 
                 if (item.ContainsKey("LastOpenedAt") && !string.IsNullOrEmpty(item["LastOpenedAt"].S))
                 {
-                    book.LastOpenedAt = DateTime.Parse(item["LastOpenedAt"].S);
+                    book.LastOpenedAt
+                        = DateTime.Parse(item["LastOpenedAt"].S);
                 }
                 books.Add(book);
             }
             return books;
+        }
+
+        public async Task UpdateLastReadPageAsync(string userId, string bookId, int page)
+        {
+            var request = new UpdateItemRequest
+            {
+                TableName = "bookshelf",
+
+                Key = new Dictionary<string, AttributeValue>
+                {
+                    {"UserId", new AttributeValue { S = userId } },
+                    {"BookId", new AttributeValue { S= bookId} }
+                },
+
+                UpdateExpression = "Set LastReadPage = :page",
+
+                ExpressionAttributeValues = new Dictionary<string, AttributeValue>
+                {
+                    {":page", new AttributeValue { N= page.ToString()} }
+                }
+            };
+            await _dynamoDB.UpdateItemAsync(request);
         }
     }
 }

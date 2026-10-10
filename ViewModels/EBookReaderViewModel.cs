@@ -74,9 +74,7 @@ namespace _301434046_eskim__Lab2.ViewModels
 
             CurrentContentViewModel = _bookListViewModel;
 
-            //_ = _bookListViewModel.LoadBooksAsync();
-
-            _bookListViewModel.LoadSampleBooks();
+            _ = _bookListViewModel.LoadBooksAsync();
         }
 
         private void ShowBookList()

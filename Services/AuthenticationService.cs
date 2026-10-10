@@ -12,18 +12,25 @@ namespace _301434046_eskim__Lab2.Services
 
         public bool Login(string username, string password)
         {
-            if (username == "admin" && password == "password")
+            if (username == "eskim" && password == "eskim123")
             {
                 CurrentUserId = "user-001";
                 return true;
             }
 
-            if (username == "bob" && password == "bob123")
+            if (username == "john" && password == "john123")
             {
                 CurrentUserId = "user-002";
                 return true;
             }
 
+            if (username == "jane" && password == "jane123")
+            {
+                CurrentUserId = "user-003";
+                return true;
+            }
+
+            CurrentUserId = null;
             return false;
         }
 

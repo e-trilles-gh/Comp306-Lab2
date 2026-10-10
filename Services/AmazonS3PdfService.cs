@@ -1,5 +1,6 @@
 ﻿using _301434046_eskim__Lab2.Models;
 using Amazon;
+using Amazon.Runtime;
 using Amazon.S3;
 using Amazon.S3.Model;
 using System.IO;

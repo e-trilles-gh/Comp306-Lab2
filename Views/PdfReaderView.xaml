@@ -22,6 +22,9 @@
         <syncfusion:PdfViewerControl
             x:Name="pdfViewer"
             Grid.Row="1"
-            ItemSource="{Binding DocumentStream}"/>
+            ItemSource="{Binding DocumentStream}"
+            CurrentPageChanged="pdfViewer_CurrentPageChanged"
+            DocumentLoaded="pdfViewer_DocumentLoaded" />
     </Grid>
+
 </UserControl>
