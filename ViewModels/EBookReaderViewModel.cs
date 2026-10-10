@@ -57,22 +57,26 @@ namespace _301434046_eskim__Lab2.ViewModels
 
             _amazonS3PdfService = amazonPdfService;
 
-            string userId = _authenticationService.CurrentUserId;
+            _bookService = bookService;
 
             LogoutUser
                 = new LogoutCommand(
-                    navigationStore,
-                    authenticationService,
-                    amazonPdfService,
-                    bookService);
-
-            _bookListViewModel = new BookListViewModel(OpenBook, bookService, userId);
-
-            _ = _bookListViewModel.LoadBooksAsync();
+                    _navigationStore,
+                    _authenticationService,
+                    _amazonS3PdfService,
+                    _bookService);
 
             ShowBookListCommand = new ActionCommand(_ => ShowBookList());
 
+            string userId = _authenticationService.CurrentUserId;
+            
+            _bookListViewModel = new BookListViewModel(OpenBook, _bookService, userId);
+
             CurrentContentViewModel = _bookListViewModel;
+
+            //_ = _bookListViewModel.LoadBooksAsync();
+
+            _bookListViewModel.LoadSampleBooks();
         }
 
         private void ShowBookList()

@@ -12,6 +12,7 @@ namespace _301434046_eskim__Lab2.ViewModels
 {
     public class LoginViewModel : ViewModelBase
     {
+        private readonly BookService _bookService;
         public ICommand LoginUser { get; }
         public ICommand ExitProgram { get; }
 
@@ -55,12 +56,13 @@ namespace _301434046_eskim__Lab2.ViewModels
             AmazonS3PdfService amazonS3PdfService,
             BookService bookService)
         {
+            _bookService = bookService;
             LoginUser = new LoginCommand(
                 this,
                 navigationStore,
                 authenticationService,
                 amazonS3PdfService,
-                bookService);
+                _bookService);
             ExitProgram = new ExitCommand();
         }
     }

@@ -72,9 +72,9 @@ namespace _301434046_eskim__Lab2.ViewModels
             {
                 DocumentStream = await _pdfService.GetPdfAsync(SelectedBook);
             }
-            catch (Exception ex)
+            catch (Exception error)
             {
-                ErrorMessage = "Unable to laod the selected book.";
+                ErrorMessage = "Unable to load the selected book. " + error.Message;
             }
             finally
             {

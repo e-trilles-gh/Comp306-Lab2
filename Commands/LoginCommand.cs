@@ -12,12 +12,12 @@ namespace _301434046_eskim__Lab2.Commands
 {
     public class LoginCommand : CommandBase
     {
-        private AuthenticationService _authenticationService;
+        private readonly AuthenticationService _authenticationService;
         private readonly NavigationStore _navigationStore;
         private readonly LoginViewModel _loginViewModel;
+        private readonly AmazonS3PdfService _amazonS3PdfService;
         private readonly BookService _bookService;
 
-        private readonly AmazonS3PdfService _amazonS3PdfService;
 
         public LoginCommand(LoginViewModel loginViewModel,
             NavigationStore navigationStore,
