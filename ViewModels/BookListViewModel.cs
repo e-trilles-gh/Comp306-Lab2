@@ -76,41 +76,6 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
-        public void LoadSampleBooks()
-        {
-            var sampleBooks = new List<Book>
-            {
-                new Book
-                {
-                    BookId = "book-001",
-                    UserId = _userId,
-                    Title = "The Hobbit",
-                    Author = "Harry Potter",
-                    LastReadPage = 25
-                },
-
-                new Book
-                {
-                    BookId = "book-002",
-                    UserId = _userId,
-                    Title = "The Cars",
-                    Author = "Toy Story",
-                    LastReadPage = 8
-                },
-
-                new Book
-                {
-                    BookId = "book-003",
-                    UserId = _userId,
-                    Title = "The Witcher",
-                    Author = "Call of Duty",
-                    LastReadPage = 42
-                }
-            };
-
-            LoadBooks(sampleBooks);
-        }
-
         public void ClearSelectedBook()
         {
             SelectedBook = null;

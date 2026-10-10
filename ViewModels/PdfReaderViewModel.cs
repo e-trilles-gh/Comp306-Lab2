@@ -19,6 +19,8 @@ namespace _301434046_eskim__Lab2.ViewModels
 
         private string _errorMessage;
 
+        private BookService _bookService;
+
         public Book SelectedBook { get; }
 
         public int PageToRestore { get; }
@@ -58,11 +60,13 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
-        public PdfReaderViewModel(Book selectedBook, AmazonS3PdfService pdfService)
+        public PdfReaderViewModel(Book selectedBook, AmazonS3PdfService pdfService, BookService bookService)
         {
             SelectedBook = selectedBook ?? throw new ArgumentNullException(nameof(selectedBook));
 
             _pdfService = pdfService ?? throw new ArgumentNullException(nameof(pdfService));
+
+            _bookService = bookService;
 
             PageToRestore = SelectedBook.LastReadPage;
         }
@@ -86,12 +90,13 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
-        public void UpdateLastReadPage(int page)
+        public async void UpdateLastReadPage(int page)
         {
             if (page > 0)
             {
                 SelectedBook.LastReadPage = page;
                 OnPropertyChanged(nameof(LastReadPage));
+                await _bookService.UpdateLastReadPageAsync(SelectedBook.UserId, SelectedBook.BookId, page);
             }
         }
     }

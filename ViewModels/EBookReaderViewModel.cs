@@ -25,6 +25,17 @@ namespace _301434046_eskim__Lab2.ViewModels
 
         private readonly BookService _bookService;
 
+        private string _userName;
+
+        public string UserName
+        {
+            get { return _userName; }
+            set
+            {
+                _userName = value;
+                OnPropertyChanged(nameof(UserName));
+            }
+        }
 
         public ICommand LogoutUser { get; }
 
@@ -68,6 +79,8 @@ namespace _301434046_eskim__Lab2.ViewModels
 
             ShowBookListCommand = new ActionCommand(_ => ShowBookList());
 
+            UserName = _authenticationService.CurrentUserName;
+
             string userId = _authenticationService.CurrentUserId;
             
             _bookListViewModel = new BookListViewModel(OpenBook, _bookService, userId);
@@ -85,7 +98,7 @@ namespace _301434046_eskim__Lab2.ViewModels
 
         private async void OpenBook(Book book)
         {
-            var readerViewModel = new PdfReaderViewModel(book, _amazonS3PdfService);
+            var readerViewModel = new PdfReaderViewModel(book, _amazonS3PdfService, _bookService);
             await readerViewModel.LoadAsync();
 
             if (readerViewModel.DocumentStream != null)
