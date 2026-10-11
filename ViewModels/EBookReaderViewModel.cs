@@ -9,10 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+/*
+ * Eskim Trilles - 301434046
+ * COMP306 - API Engineering & Cloud Computing - Sec402
+ * Lab2
+ * October 11, 2026
+ */
+
 namespace _301434046_eskim__Lab2.ViewModels
 {
     public class EBookReaderViewModel : ViewModelBase
     {
+        //properties and fields
         private readonly NavigationStore _navigationStore;
 
         private readonly AuthenticationService _authenticationService;
@@ -27,6 +35,11 @@ namespace _301434046_eskim__Lab2.ViewModels
 
         private string _userName;
 
+        public ICommand LogoutUser { get; }
+
+        public ICommand ShowBookListCommand { get; }
+
+        //getter and setter methods
         public string UserName
         {
             get { return _userName; }
@@ -37,10 +50,7 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
-        public ICommand LogoutUser { get; }
-
-        public ICommand ShowBookListCommand { get; }
-
+        //sets the view for the content control
         public ViewModelBase CurrentContentViewModel
         {
             get { return _currentContentViewModel; }
@@ -56,6 +66,7 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
+        //constructor with parameter
         public EBookReaderViewModel(
             NavigationStore navigationStore,
             AuthenticationService authenticationService,
@@ -70,6 +81,7 @@ namespace _301434046_eskim__Lab2.ViewModels
 
             _bookService = bookService;
 
+            //instantiates the LogoutCommand for logout button
             LogoutUser
                 = new LogoutCommand(
                     _navigationStore,
@@ -77,6 +89,7 @@ namespace _301434046_eskim__Lab2.ViewModels
                     _amazonS3PdfService,
                     _bookService);
 
+            //instatiates the ActionCommand for ShowBookListCommand
             ShowBookListCommand = new ActionCommand(_ => ShowBookList());
 
             UserName = _authenticationService.CurrentUserName;
@@ -90,27 +103,34 @@ namespace _301434046_eskim__Lab2.ViewModels
             _ = _bookListViewModel.LoadBooksAsync();
         }
 
-        private void ShowBookList()
+        private async void ShowBookList()
         {
             _bookListViewModel.ClearSelectedBook();
+
+            //loads all the books
+            await _bookListViewModel.LoadBooksAsync();
+
+            //sets the content which shows the list of books
             CurrentContentViewModel = _bookListViewModel;
         }
 
         private async void OpenBook(Book book)
         {
-            var readerViewModel = new PdfReaderViewModel(book, _amazonS3PdfService, _bookService);
-            await readerViewModel.LoadAsync();
+            //instantiates the viewmodel that manages to view the selected book
+            var pdfReaderViewModel = new PdfReaderViewModel(book, _amazonS3PdfService, _bookService);
+            await pdfReaderViewModel.LoadAsync();
 
-            if (readerViewModel.DocumentStream != null)
+            if (pdfReaderViewModel.DocumentStream != null)
             {
-                CurrentContentViewModel = readerViewModel;
+                //sets the contentview to show the pdf
+                CurrentContentViewModel = pdfReaderViewModel;
             }
             else
             {
                 System.Windows.MessageBox.Show(
-                    readerViewModel.ErrorMessage ?? "Unable to open the book.");
+                    pdfReaderViewModel.ErrorMessage ?? "Unable to open the book.");
 
-                readerViewModel.Dispose();
+                pdfReaderViewModel.Dispose();
             }
         }
     }

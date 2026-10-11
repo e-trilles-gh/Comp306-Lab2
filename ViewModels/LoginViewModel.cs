@@ -8,10 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
+/*
+ * Eskim Trilles - 301434046
+ * COMP306 - API Engineering & Cloud Computing - Sec402
+ * Lab2
+ * October 11, 2026
+ */
+
 namespace _301434046_eskim__Lab2.ViewModels
 {
     public class LoginViewModel : ViewModelBase
     {
+        //properties
         private readonly BookService _bookService;
         public ICommand LoginUser { get; }
         public ICommand ExitProgram { get; }
@@ -20,6 +28,7 @@ namespace _301434046_eskim__Lab2.ViewModels
         private string _password;
         private string _errorMessage;
 
+        //setter and getter methods
         public string Username
         {
             get => _username;
@@ -50,6 +59,7 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
+        //constructor with parameters
         public LoginViewModel(
             NavigationStore navigationStore,
             AuthenticationService authenticationService,
@@ -57,12 +67,16 @@ namespace _301434046_eskim__Lab2.ViewModels
             BookService bookService)
         {
             _bookService = bookService;
+
+            //instantiates the LoginCommand to verify user credentials
             LoginUser = new LoginCommand(
                 this,
                 navigationStore,
                 authenticationService,
                 amazonS3PdfService,
                 _bookService);
+
+            //instantiates the ExitCommand to terminate the program
             ExitProgram = new ExitCommand();
         }
     }

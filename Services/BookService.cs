@@ -7,6 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Eskim Trilles - 301434046
+ * COMP306 - API Engineering & Cloud Computing - Sec402
+ * Lab2
+ * October 11, 2026
+ */
+
 namespace _301434046_eskim__Lab2.Services
 {
     public class BookService
@@ -74,11 +81,12 @@ namespace _301434046_eskim__Lab2.Services
                     {"BookId", new AttributeValue { S= bookId} }
                 },
 
-                UpdateExpression = "Set LastReadPage = :page",
+                UpdateExpression = "SET LastReadPage = :page, LastOpenedAt = :time",
 
                 ExpressionAttributeValues = new Dictionary<string, AttributeValue>
                 {
-                    {":page", new AttributeValue { N= page.ToString()} }
+                    {":page", new AttributeValue { N= page.ToString()} },
+                    {":time", new AttributeValue { S= DateTime.UtcNow.ToString("o")} }
                 }
             };
             await _dynamoDB.UpdateItemAsync(request);

@@ -8,17 +8,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Eskim Trilles - 301434046
+ * COMP306 - API Engineering & Cloud Computing - Sec402
+ * Lab2
+ * October 11, 2026
+ */
+
 namespace _301434046_eskim__Lab2.ViewModels
 {
     public class BookListViewModel : ViewModelBase
     {
+        //properties and fields
         private Book _selectedBook;
         private readonly Action<Book> _openBook;
         private readonly BookService _bookService;
         private readonly string _userId;
 
+        //collection of books
         public ObservableCollection<Book> Books { get; } = new ObservableCollection<Book>();
 
+        //setter and getter
         public Book SelectedBook
         {
             get { return _selectedBook; }
@@ -39,6 +49,7 @@ namespace _301434046_eskim__Lab2.ViewModels
             }
         }
 
+        //constructor with parameter
         public BookListViewModel(
             Action<Book> openBook,
             BookService bookService,
@@ -49,23 +60,18 @@ namespace _301434046_eskim__Lab2.ViewModels
             _userId = userId;
         }
 
-        public void LoadBooks(List<Book> books)
-        {
-            Books.Clear();
-
-            foreach (Book book in books)
-            {
-                Books.Add(book);
-            }
-        }
 
         public async Task LoadBooksAsync()
         {
             try
             {
                 var books = await _bookService.GetBooksForUserAsync(_userId);
+
+                var sortedBooks = books.OrderByDescending(book => book.LastOpenedAt ?? DateTime.MinValue).ToList();
+                
                 Books.Clear();
-                foreach (var book in books)
+
+                foreach (Book book in sortedBooks)
                 {
                     Books.Add(book);
                 }

@@ -10,10 +10,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*
+ * Eskim Trilles - 301434046
+ * COMP306 - API Engineering & Cloud Computing - Sec402
+ * Lab2
+ * October 11, 2026
+ */
+
 namespace _301434046_eskim__Lab2.Services
 {
     public class AmazonS3PdfService
     {
+        //fetch the pdf and save it into memory
         public async Task<MemoryStream> GetPdfAsync(Book book)
         {
             using var s3Client = new AmazonS3Client(RegionEndpoint.USEast1);
